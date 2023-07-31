@@ -46,9 +46,9 @@ class ContentProvider extends ChangeNotifier {
     if (_characters.isNotEmpty) {
       final randomIndex = Random().nextInt(_characters.length);
       _name = _characters[randomIndex].name ?? '';
+      notifyListeners();
       return _name;
     }
-    notifyListeners();
     return 'Nothing to show';
   }
 
